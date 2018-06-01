@@ -1,6 +1,7 @@
 package com.rabith.string;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 public class StringOperation {
@@ -72,5 +73,30 @@ public class StringOperation {
 		}
 
 		return text1.substring(0, commonLenght);
+	}
+
+	/**
+	 * longest Repeated SubString
+	 * 
+	 * @param text
+	 * @return
+	 */
+	public String longestRepeatedSubString(String text) {
+		int lenghtOfText = text.length();
+
+		List<String> suffixes = getSuffixes(text);
+		Collections.sort(suffixes);
+		String longestSubString = "";
+
+		for (int i = 0; i < lenghtOfText - 1; i++) {
+			String tempString = longestCommonPrefix(suffixes.get(i), suffixes.get(i + 1));
+
+			if (tempString.length() > longestSubString.length()) {
+				longestSubString = tempString;
+			}
+		}
+
+		return longestSubString;
+
 	}
 }

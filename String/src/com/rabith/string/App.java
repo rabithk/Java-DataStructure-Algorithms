@@ -20,9 +20,11 @@ public class App {
 
 		System.out.println("String CommonPrefix =>"+ operation.longestCommonPrefix("Hello", "Hellos"));
 		System.out.println("String CommonPrefix =>"+ operation.longestCommonPrefix("Hello", "abc"));
-
 		System.out.println("----");
 
+		System.out.println("String longestRepeatedSubString =>"+ operation.longestRepeatedSubString("HelloHello"));
+		System.out.println("String longestRepeatedSubString =>"+ operation.longestRepeatedSubString("abc"));
+		System.out.println("----");
 	}
 
 }
