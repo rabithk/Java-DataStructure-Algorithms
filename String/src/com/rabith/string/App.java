@@ -12,6 +12,11 @@ public class App {
 		for (String s : suffixes)
 			System.out.println("String Suffixes =>" + s);
 		System.out.println("----");
+		
+		List<String> prefixex = operation.getPrefixes("Rabith Kuniyil");
+		for (String s : prefixex)
+			System.out.println("String Prefixes =>" + s);
+		System.out.println("----");
 
 	}
 

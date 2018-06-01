@@ -3,6 +3,8 @@ package com.rabith.string;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.w3c.dom.Text;
+
 public class StringOperation {
 	/**
 	 * Reverse String
@@ -36,5 +38,22 @@ public class StringOperation {
 			suffixesList.add(text.substring(index, lengthOfText)); // O(1)
 		}
 		return suffixesList;
+	}
+	
+	/**
+	 * getPrefixes
+	 * O(N)
+	 * 
+	 * @param text
+	 * @return
+	 */
+	public List<String> getPrefixes(String text){
+		int lengthOfText = text.length();
+		List<String> prefixeList = new ArrayList<>();
+		
+		for( int index = 1 ; index < lengthOfText+1 ;++ index) {
+			prefixeList.add(text.substring(0, index)); //O(1)
+		}
+		return prefixeList;
 	}
 }
