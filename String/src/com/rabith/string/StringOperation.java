@@ -3,8 +3,6 @@ package com.rabith.string;
 import java.util.ArrayList;
 import java.util.List;
 
-import org.w3c.dom.Text;
-
 public class StringOperation {
 	/**
 	 * Reverse String
@@ -39,21 +37,40 @@ public class StringOperation {
 		}
 		return suffixesList;
 	}
-	
+
 	/**
-	 * getPrefixes
-	 * O(N)
+	 * getPrefixes O(N)
 	 * 
 	 * @param text
 	 * @return
 	 */
-	public List<String> getPrefixes(String text){
+	public List<String> getPrefixes(String text) {
 		int lengthOfText = text.length();
 		List<String> prefixeList = new ArrayList<>();
-		
-		for( int index = 1 ; index < lengthOfText+1 ;++ index) {
-			prefixeList.add(text.substring(0, index)); //O(1)
+
+		for (int index = 1; index < lengthOfText + 1; ++index) {
+			prefixeList.add(text.substring(0, index)); // O(1)
 		}
 		return prefixeList;
+	}
+
+	/**
+	 * longestCommonPrefix
+	 * 
+	 * @param text1
+	 * @param text2
+	 * @return
+	 */
+	public String longestCommonPrefix(String text1, String text2) {
+
+		int commonLenght = Math.min(text1.length(), text2.length());
+
+		for (int index = 0; index < commonLenght; ++index) {
+			if (text1.charAt(index) != text2.charAt(index)) {
+				return text1.substring(0, index);
+			}
+		}
+
+		return text1.substring(0, commonLenght);
 	}
 }
